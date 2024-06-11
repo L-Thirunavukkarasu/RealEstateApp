@@ -1,16 +1,16 @@
 # realestate
 
-A new Flutter project.
+Screenshots : 
 
-## Getting Started
+![Simulator Screenshot - iPhone 15 Pro - 2024-06-12 at 00 54 31](https://github.com/L-Thirunavukkarasu/RealEstateApp/assets/42915494/a16e4c01-a7a1-4583-a984-b051284a45ee)
 
-This project is a starting point for a Flutter application.
+![Simulator Screenshot - iPhone 15 Pro - 2024-06-12 at 00 54 39](https://github.com/L-Thirunavukkarasu/RealEstateApp/assets/42915494/597d8491-4779-42d1-a3c1-e956b75c5630)
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Demo :
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+https://github.com/L-Thirunavukkarasu/RealEstateApp/assets/42915494/0f63774e-cffa-4c2d-83a6-77dc0ce22ef0
+
+
+https://github.com/L-Thirunavukkarasu/RealEstateApp/assets/42915494/90273eb5-7e51-4356-a394-2e045e92fb7a
+
