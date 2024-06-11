@@ -35,17 +35,14 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.orangeAccent),
         primaryColor: Colors.orangeAccent,
-        secondaryHeaderColor:Colors.black,
+        secondaryHeaderColor: Colors.black,
         splashColor: Colors.transparent,
         highlightColor: Colors.transparent,
         hoverColor: Colors.transparent,
         useMaterial3: true,
-
       ),
       debugShowCheckedModeBanner: false,
-      home:
-
-          const MyHomePage(title: 'Real Estate App Home Page'),
+      home: const MyHomePage(title: 'Real Estate App Home Page'),
     );
   }
 }
@@ -68,15 +65,16 @@ class MyHomePage extends StatefulWidget {
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateMixin {
+class _MyHomePageState extends State<MyHomePage>
+    with SingleTickerProviderStateMixin {
   //tabs redirections
   int currentIndexVal = 2;
   final tabs = [
-    Center(child:SearchScreen()),
-    Center(child:ChatScreen()),
-    Center(child:HomeScreen()),
-    Center(child:FavouriteScreen()),
-    Center(child:ProfileScreen())
+    Center(child: SearchScreen()),
+    Center(child: ChatScreen()),
+    Center(child: HomeScreen()),
+    Center(child: FavouriteScreen()),
+    Center(child: ProfileScreen())
   ];
   //animation
   late AnimationController controller;
@@ -86,18 +84,14 @@ class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateM
   void initState() {
     super.initState();
 
-    controller =
-        AnimationController(vsync: this, duration: const Duration(milliseconds: 700));
+    controller = AnimationController(
+        vsync: this, duration: const Duration(milliseconds: 700));
 
     //bottom navigation bar animation
-    bottomOffsetAnim = Tween(begin: const Offset(0, 1), end: Offset.zero)
-        .animate(controller);
+    bottomOffsetAnim =
+        Tween(begin: const Offset(0, 1), end: Offset.zero).animate(controller);
     controller.forward();
-
-
   }
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -108,107 +102,111 @@ class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateM
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return Scaffold(
-      bottomNavigationBar: SlideTransition(
-        position:bottomOffsetAnim,
-        child:Container(
-        margin:EdgeInsets.only(left:50,right:50,bottom:30,top:10),
-        height:60,
-        decoration: BoxDecoration(
-          color: Color(0xff222126),
-          borderRadius: BorderRadius.circular(30),
+        bottomNavigationBar: SlideTransition(
+          position: bottomOffsetAnim,
+          child: Container(
+              margin: EdgeInsets.only(left: 50, right: 50, bottom: 30, top: 10),
+              height: 60,
+              decoration: BoxDecoration(
+                color: Color(0xff222126),
+                borderRadius: BorderRadius.circular(30),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  CircleAvatar(
+                    radius: 20,
+                    backgroundColor: currentIndexVal == 0
+                        ? Colors.orangeAccent
+                        : Color(0xff1b1a1f),
+                    child: IconButton(
+                      enableFeedback: false,
+                      icon: Icon(
+                        Icons.search,
+                        color: Colors.white,
+                      ),
+                      onPressed: () {
+                        setState(() {
+                          currentIndexVal = 0;
+                        });
+                      },
+                    ),
+                  ),
+                  CircleAvatar(
+                    radius: 20,
+                    backgroundColor: currentIndexVal == 1
+                        ? Colors.orangeAccent
+                        : Color(0xff1b1a1f),
+                    child: IconButton(
+                      enableFeedback: false,
+                      icon: Icon(
+                        Icons.message,
+                        color: Colors.white,
+                      ),
+                      onPressed: () {
+                        setState(() {
+                          currentIndexVal = 1;
+                        });
+                      },
+                    ),
+                  ),
+                  CircleAvatar(
+                    radius: 20,
+                    backgroundColor: currentIndexVal == 2
+                        ? Colors.orangeAccent
+                        : Color(0xff1b1a1f),
+                    child: IconButton(
+                      enableFeedback: false,
+                      icon: Icon(
+                        Icons.home,
+                        color: Colors.white,
+                      ),
+                      onPressed: () {
+                        setState(() {
+                          currentIndexVal = 2;
+                        });
+                      },
+                    ),
+                  ),
+                  CircleAvatar(
+                    radius: 20,
+                    backgroundColor: currentIndexVal == 3
+                        ? Colors.orangeAccent
+                        : Color(0xff1b1a1f),
+                    child: IconButton(
+                      enableFeedback: false,
+                      icon: Icon(
+                        Icons.favorite,
+                        color: Colors.white,
+                      ),
+                      onPressed: () {
+                        setState(() {
+                          currentIndexVal = 3;
+                        });
+                      },
+                    ),
+                  ),
+                  CircleAvatar(
+                    radius: 20,
+                    backgroundColor: currentIndexVal == 4
+                        ? Colors.orangeAccent
+                        : Color(0xff1b1a1f),
+                    child: IconButton(
+                      enableFeedback: false,
+                      icon: Icon(
+                        Icons.person,
+                        color: Colors.white,
+                      ),
+                      onPressed: () {
+                        setState(() {
+                          currentIndexVal = 4;
+                        });
+                      },
+                    ),
+                  ),
+                ],
+              )),
         ),
-        child:
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            CircleAvatar(
-              radius: 20,
-              backgroundColor: currentIndexVal == 0 ? Colors.orangeAccent : Color(0xff1b1a1f),
-              child: IconButton(
-                enableFeedback: false,
-                icon: Icon(
-                  Icons.search,
-                  color: Colors.white,
-
-                ),
-                onPressed: () {
-                  setState(() {
-                    currentIndexVal = 0;
-                  });
-                },
-              ),
-            ),
-            CircleAvatar(
-              radius: 20,
-              backgroundColor: currentIndexVal == 1 ? Colors.orangeAccent : Color(0xff1b1a1f),
-              child: IconButton(
-                enableFeedback: false,
-                icon: Icon(
-                  Icons.message,
-                  color: Colors.white,
-                ),
-                onPressed: () {
-                  setState(() {
-                    currentIndexVal = 1;
-                  });
-                },
-              ),
-            ),
-            CircleAvatar(
-              radius: 20,
-              backgroundColor: currentIndexVal == 2 ? Colors.orangeAccent : Color(0xff1b1a1f),
-              child: IconButton(
-                enableFeedback: false,
-                icon: Icon(
-                  Icons.home,
-                  color: Colors.white,
-                ),
-                onPressed: () {
-                  setState(() {
-                    currentIndexVal = 2;
-                  });
-                },
-              ),
-            ),
-            CircleAvatar(
-              radius: 20,
-              backgroundColor: currentIndexVal == 3 ? Colors.orangeAccent : Color(0xff1b1a1f),
-              child: IconButton(
-                enableFeedback: false,
-                icon: Icon(
-                  Icons.favorite,
-                  color: Colors.white,
-                ),
-                onPressed: () {
-                  setState(() {
-                    currentIndexVal = 3;
-                  });
-                },
-              ),
-            ),
-            CircleAvatar(
-              radius: 20,
-              backgroundColor: currentIndexVal == 4 ? Colors.orangeAccent : Color(0xff1b1a1f),
-              child: IconButton(
-                enableFeedback: false,
-                icon: Icon(
-                  Icons.person,
-                  color: Colors.white,
-                ),
-                onPressed: () {
-                  setState(() {
-                    currentIndexVal = 4;
-                  });
-                },
-              ),
-            ),
-
-          ],
-        )
-      ),
-      ),
-
-      body: tabs[currentIndexVal]
-    );
+        body: tabs[currentIndexVal]);
   }
 }

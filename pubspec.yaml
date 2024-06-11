@@ -63,6 +63,7 @@ flutter:
      - assets/images/home_3.jpeg
      - assets/images/home_4.webp
      - assets/images/home_5.webp
+     - assets/images/profile_pic.webp
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
